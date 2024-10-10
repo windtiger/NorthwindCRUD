@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NorthwindCRUD.Models;
 
-namespace NorthwindCRUD.Models
+namespace NorthwindCRUD.Controllers
 {
     public class PublishersController : Controller
     {

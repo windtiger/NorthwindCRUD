@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Title</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -37,7 +37,7 @@
                 @Html.DisplayNameFor(model => model.Pubdate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pub)
+                @Html.DisplayNameFor(model => model.Pub.PubName)
             </th>
             <th></th>
         </tr>
@@ -70,7 +70,7 @@
                 @Html.DisplayFor(modelItem => item.Pubdate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Pub.PubId)
+                @Html.DisplayFor(modelItem => item.Pub.PubName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TitleId">Edit</a> |

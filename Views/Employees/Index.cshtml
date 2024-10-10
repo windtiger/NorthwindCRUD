@@ -1,0 +1,71 @@
+﻿@model IEnumerable<NorthwindCRUD.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Employee</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Minit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobLvl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pub)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Minit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobLvl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job.JobId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pub.PubId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmpId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmpId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmpId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
